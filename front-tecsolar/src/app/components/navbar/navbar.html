@@ -1,0 +1,63 @@
+<header class="w-full bg-white shadow-sm font-sans sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-24 relative">
+      
+      <div class="flex items-center cursor-pointer">
+        <a routerLink="/inicio" class="flex items-center">
+          <img src="/Logo_TECSOLAR.png" alt="TecSolar Logo" class="h-20 w-auto object-contain">
+        </a>
+      </div>
+      
+      <nav class="hidden lg:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2" style="margin-top: 5px">
+        <a routerLink="/inicio" routerLinkActive="!text-gray-900 !border-[#78A942]" [routerLinkActiveOptions]="{exact: true}" class="text-gray-600 hover:text-[#78A942] font-semibold uppercase text-sm tracking-wide transition-colors pb-1 border-b-2 border-transparent">Inicio</a>
+        <a routerLink="/servicios" routerLinkActive="!text-gray-900 !border-[#78A942]" class="text-gray-600 hover:text-[#78A942] font-semibold uppercase text-sm tracking-wide transition-colors pb-1 border-b-2 border-transparent">Servicios</a>
+        <a routerLink="/proyectos" routerLinkActive="!text-gray-900 !border-[#78A942]" class="text-gray-600 hover:text-[#78A942] font-semibold uppercase text-sm tracking-wide transition-colors pb-1 border-b-2 border-transparent">Proyectos</a>
+     
+      </nav>
+
+      <div class="hidden lg:flex">
+        <a href="https://wa.me/573137139197" target="_blank" class="bg-[#78A942] hover:bg-[#659135] text-white px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2 transition-all shadow-md">
+          Cotiza tu proyecto
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="lg:hidden flex items-center">
+        <button (click)="toggleMenu()" class="text-gray-600 hover:text-[#78A942] focus:outline-none transition-colors">
+          @if (!isMenuOpen) {
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          }
+          @else {
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          }
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  @if (isMenuOpen) {
+    <div class="lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40 animate-fade-in-down">
+      <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+        <a routerLink="/inicio" (click)="closeMenu()" routerLinkActive="bg-green-50 text-[#78A942]" [routerLinkActiveOptions]="{exact: true}" class="block px-4 py-3 rounded-xl font-bold text-gray-700 hover:text-[#78A942] hover:bg-green-50 transition-colors uppercase text-sm">Inicio</a>
+        <a routerLink="/servicios" (click)="closeMenu()" routerLinkActive="bg-green-50 text-[#78A942]" class="block px-4 py-3 rounded-xl font-bold text-gray-700 hover:text-[#78A942] hover:bg-green-50 transition-colors uppercase text-sm">Servicios</a>
+        <a routerLink="/proyectos" (click)="closeMenu()" routerLinkActive="bg-green-50 text-[#78A942]" class="block px-4 py-3 rounded-xl font-bold text-gray-700 hover:text-[#78A942] hover:bg-green-50 transition-colors uppercase text-sm">Proyectos</a>
+
+        <div class="pt-4 pb-2">
+          <a href="https://wa.me/573137139197" target="_blank" (click)="closeMenu()" class="w-full bg-[#78A942] hover:bg-[#659135] text-white px-4 py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+            Cotiza tu proyecto
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  }
+</header>
