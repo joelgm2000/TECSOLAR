@@ -10,12 +10,12 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrl: './footer.css',
 })
 export class Footer {
-// Lista de tus sucursales exactas
+  // Lista de tus sucursales exactas y ordenadas correctamente
   ciudades = [
-    { nombre: 'Valledupar', direccion: 'Calle 29 N° 4-27 / Local 1, Valledupar, Colombia' },
-    { nombre: 'Barranquilla', direccion: 'Cra 12 N° 13b-02 – Obrero, Barranquilla, Colombia' },
-    { nombre: 'Cartagena', direccion: 'C.C. Parque Central / Local A19, Cartagena, Colombia' },
-    { nombre: 'Montería', direccion: 'Calle 32c N°10a-31 / Centro, Montería, Colombia' }
+    { nombre: 'Valledupar', direccion: 'Cra 12 N° 13b-02 – Barrio Obrero, Valledupar, Colombia' },
+    { nombre: 'Barranquilla', direccion: 'Centro Comercial Parque Central, Local A19, Barranquilla, Colombia' },
+    { nombre: 'Cartagena', direccion: 'Calle 32c N° 10a-31, Sector Centro, Cartagena, Colombia' },
+    { nombre: 'Montería', direccion: 'Calle 29 N° 4-27, Local 1, Montería, Colombia' }
   ];
 
   ciudadSeleccionada = this.ciudades[0]; // Inicia en Valledupar por defecto
@@ -28,7 +28,8 @@ export class Footer {
   // Función que actualiza el mapa
   actualizarMapa(ciudad: any) {
     this.ciudadSeleccionada = ciudad;
-    // Generamos el enlace de Google Maps con la dirección exacta
+    
+    // Generamos el enlace de Google Maps con la dirección exacta (URL corregida)
     const url = `https://maps.google.com/maps?q=${encodeURIComponent(ciudad.direccion)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
     
     // Angular EXIGE sanitizar la URL para los iframes por seguridad
