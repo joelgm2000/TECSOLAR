@@ -81,3 +81,68 @@
   border-top: 1px solid #e5e7eb !important;
   margin: 2rem 0 !important;
 }
+
+.wp-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0 !important;
+  font-size: 0.95rem !important;
+}
+
+.wp-content table th {
+  background-color: #78A942 !important;
+  color: white !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1rem !important;
+  text-align: left !important;
+  border: 1px solid #5a8a30 !important;
+}
+
+.wp-content table td {
+  padding: 0.75rem 1rem !important;
+  border: 1px solid #e5e7eb !important;
+  color: #4b5563 !important;
+  vertical-align: top !important;
+}
+
+.wp-content table tr:nth-child(even) td {
+  background-color: #f9fafb !important;
+}
+
+.wp-content table tr:hover td {
+  background-color: #f0f7eb !important;
+}
+/* Galería / carrusel de WordPress → grilla de imágenes */
+.wp-content .wp-block-gallery,
+.wp-content .gallery,
+.wp-content figure.wp-block-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  gap: 0.75rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.wp-content .wp-block-gallery .wp-block-image,
+.wp-content .gallery-item,
+.wp-content .blocks-gallery-item {
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 10px !important;
+}
+
+.wp-content .wp-block-gallery img,
+.wp-content .gallery-item img,
+.wp-content .blocks-gallery-item img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  margin: 0 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.wp-content .wp-block-gallery img:hover,
+.wp-content .gallery-item img:hover,
+.wp-content .blocks-gallery-item img:hover {
+  transform: scale(1.04) !important;
+}
