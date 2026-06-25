@@ -148,13 +148,13 @@
           </div>
 
           <!-- Título -->
-          <h2 class="text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
-            {{ getTitulo(noticiaSeleccionada()) }}
-          </h2>
-
+          <h2
+            class="text-3xl font-extrabold text-gray-900 mb-6 leading-tight"
+            [innerHTML]="sanitizar(noticiaSeleccionada().title?.rendered)"
+          ></h2>
           <!-- Contenido completo -->
           <div
-            class="prose prose-lg max-w-none text-gray-600 leading-relaxed"
+            class="wp-content"
             [innerHTML]="sanitizar(noticiaSeleccionada().content?.rendered)"
           ></div>
 

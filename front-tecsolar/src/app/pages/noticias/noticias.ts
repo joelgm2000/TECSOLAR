@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -9,6 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   imports: [CommonModule],
   templateUrl: './noticias.html',
   styleUrl: './noticias.css',
+  encapsulation: ViewEncapsulation.None    
 })
 export class Noticias implements OnInit {
   noticias = signal<any[]>([]);
@@ -33,7 +34,9 @@ export class Noticias implements OnInit {
   }
 
   getTitulo(noticia: any): string {
-    return noticia.title?.rendered?.trim() || '(Sin título)';
+    const raw = noticia.title?.rendered ?? '(Sin título)';
+    const doc = new DOMParser().parseFromString(raw, 'text/html');
+    return doc.body.textContent?.trim() || '(Sin título)';
   }
 
   abrirModal(noticia: any) {
