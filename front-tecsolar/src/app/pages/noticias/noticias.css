@@ -1,3 +1,8 @@
+/* ========================================
+   CONTENIDO WORDPRESS - MODAL
+   ======================================== */
+
+/* HEADINGS */
 .wp-content h1,
 .wp-content h2,
 .wp-content h3,
@@ -12,25 +17,41 @@
   display: block !important;
 }
 
-.wp-content h1 { font-size: 2rem !important; }
-.wp-content h2 { font-size: 1.75rem !important; }
-.wp-content h3 { font-size: 1.4rem !important; }
-.wp-content h4 { font-size: 1.15rem !important; }
+.wp-content h1 { font-size: clamp(1.5rem, 4vw, 2rem) !important; }
+.wp-content h2 { font-size: clamp(1.25rem, 3vw, 1.75rem) !important; }
+.wp-content h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem) !important; }
+.wp-content h4 { font-size: clamp(1rem, 2vw, 1.15rem) !important; }
+.wp-content h5 { font-size: 1rem !important; }
+.wp-content h6 { font-size: 0.9rem !important; }
 
+/* PÁRRAFOS */
 .wp-content p {
   display: block !important;
   margin-bottom: 1.25rem !important;
   color: #4b5563 !important;
   line-height: 1.8 !important;
-  font-size: 1rem !important;
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
 }
 
+/* NEGRITAS Y ÉNFASIS */
 .wp-content strong,
 .wp-content b {
   font-weight: 700 !important;
   color: #111827 !important;
 }
 
+.wp-content em,
+.wp-content i {
+  font-style: italic !important;
+}
+
+/* ENLACES */
+.wp-content a {
+  color: #78A942 !important;
+  text-decoration: underline !important;
+}
+
+/* LISTAS */
 .wp-content ul,
 .wp-content ol {
   padding-left: 1.75rem !important;
@@ -47,11 +68,7 @@
   line-height: 1.7 !important;
 }
 
-.wp-content a {
-  color: #78A942 !important;
-  text-decoration: underline !important;
-}
-
+/* CITA */
 .wp-content blockquote {
   border-left: 4px solid #78A942 !important;
   padding-left: 1.25rem !important;
@@ -60,14 +77,42 @@
   margin: 1.5rem 0 !important;
 }
 
-.wp-content img {
-  max-width: 100% !important;
-  border-radius: 12px !important;
-  margin: 1.5rem 0 !important;
-  height: auto !important;
+/* SEPARADOR */
+.wp-content hr {
+  border: none !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 2rem 0 !important;
 }
 
-.wp-content figure { margin: 1.5rem 0 !important; }
+/* CÓDIGO */
+.wp-content pre,
+.wp-content code {
+  width: 100% !important;
+  overflow-x: auto !important;
+  background: #f3f4f6 !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  font-size: 0.875rem !important;
+  display: block !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ========================================
+   IMÁGENES
+   ======================================== */
+
+.wp-content img {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  margin: 1.5rem 0 !important;
+  display: block !important;
+}
+
+.wp-content figure {
+  margin: 1.5rem 0 !important;
+}
 
 .wp-content figcaption {
   font-size: 0.875rem !important;
@@ -76,16 +121,22 @@
   margin-top: 0.5rem !important;
 }
 
-.wp-content hr {
-  border: none !important;
-  border-top: 1px solid #e5e7eb !important;
-  margin: 2rem 0 !important;
+/* ========================================
+   TABLAS RESPONSIVE
+   ======================================== */
+
+.wp-content-table-wrapper {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 10px !important;
 }
 
 .wp-content table {
+  min-width: 500px !important;
   width: 100% !important;
   border-collapse: collapse !important;
-  margin: 1.5rem 0 !important;
   font-size: 0.95rem !important;
 }
 
@@ -112,7 +163,49 @@
 .wp-content table tr:hover td {
   background-color: #f0f7eb !important;
 }
-/* Galería / carrusel de WordPress → grilla de imágenes */
+
+/* ========================================
+   VIDEOS RESPONSIVE (YouTube, Vimeo, etc)
+   ======================================== */
+
+.wp-content .wp-block-embed,
+.wp-content .wp-block-video,
+.wp-content .embed-responsive {
+  position: relative !important;
+  width: 100% !important;
+  padding-bottom: 56.25% !important;
+  height: 0 !important;
+  margin: 1.5rem 0 !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+}
+
+.wp-content .wp-block-embed iframe,
+.wp-content .wp-block-video iframe,
+.wp-content .wp-block-embed video,
+.wp-content .embed-responsive iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 12px !important;
+  margin: 0 !important;
+}
+
+.wp-content iframe,
+.wp-content video {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ========================================
+   GALERÍA / CARRUSEL → GRILLA
+   ======================================== */
+
 .wp-content .wp-block-gallery,
 .wp-content .gallery,
 .wp-content figure.wp-block-gallery {
@@ -145,4 +238,46 @@
 .wp-content .gallery-item img:hover,
 .wp-content .blocks-gallery-item img:hover {
   transform: scale(1.04) !important;
+}
+
+/* ========================================
+   COLUMNAS DE WORDPRESS RESPONSIVE
+   ======================================== */
+
+.wp-content .wp-block-columns {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.wp-content .wp-block-column {
+  flex: 1 1 280px !important;
+  min-width: 0 !important;
+}
+
+/* ========================================
+   RESPONSIVE MÓVIL
+   ======================================== */
+
+@media (max-width: 640px) {
+  .wp-content .wp-block-gallery,
+  .wp-content .gallery,
+  .wp-content figure.wp-block-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+  }
+
+  .wp-content .wp-block-gallery img,
+  .wp-content .gallery-item img,
+  .wp-content .blocks-gallery-item img {
+    height: 130px !important;
+  }
+
+  .wp-content .wp-block-column {
+    flex: 1 1 100% !important;
+  }
+
+  .wp-content blockquote {
+    padding-left: 0.75rem !important;
+  }
 }
