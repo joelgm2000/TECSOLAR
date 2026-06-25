@@ -131,13 +131,14 @@
   -webkit-overflow-scrolling: touch !important;
   margin: 1.5rem 0 !important;
   border-radius: 10px !important;
+  display: block !important;
 }
 
 .wp-content table {
-  min-width: 500px !important;
   width: 100% !important;
   border-collapse: collapse !important;
   font-size: 0.95rem !important;
+
 }
 
 .wp-content table th {
