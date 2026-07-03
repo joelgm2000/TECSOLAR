@@ -4,6 +4,7 @@ import { Servicios } from './pages/servicios/servicios';
 import { Proyectos } from './pages/proyectos/proyectos';
 import { DetalleProyecto } from './pages/detalle-proyecto/detalle-proyecto';
 import { Noticias } from './pages/noticias/noticias';
+import { Calculadora } from './pages/calculadora/calculadora';
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: 'proyectos', component: Proyectos },
   { path: 'proyecto/:id', component: DetalleProyecto }, 
   { path: 'noticias', component: Noticias }, 
+  { path: 'calculadora', component: Calculadora }, 
 
   { path: '**', redirectTo: 'inicio' },                
 ];
