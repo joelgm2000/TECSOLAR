@@ -17,8 +17,8 @@
               Cotiza tu proyecto
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
             </a>
-            <a href="#proceso" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-colors w-fit">
-              Conoce más
+            <a href="#nosotros" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-colors w-fit">
+              Conoce más de nosotros
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
             </a>
           </div>
@@ -74,7 +74,7 @@
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-20" style="margin-bottom: 25px">
+  <section id="nosotros" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-20" style="margin-bottom: 25px">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
       <div>
         <span class="text-[#78A942] text-sm font-bold tracking-widest uppercase flex items-center gap-2 mb-3">
@@ -116,7 +116,7 @@
 
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
       
       <div class="bg-gradient-to-br from-[#78A942] to-[#659135] rounded-3xl p-8 shadow-md text-white flex flex-col justify-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <h4 class="font-extrabold text-xl mb-4 tracking-widest uppercase flex items-center gap-3">
@@ -137,11 +137,187 @@
           "Ser un referente líder de la energía solar en Colombia, expandiendo nuestro impacto en el sector residencial y productivo mediante la excelencia técnica y el compromiso con el desarrollo sostenible."
         </p>
       </div>
+    </div>
+
+    <div class="border-t border-gray-100 pt-12">
+      <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 border-l-4 border-[#78A942] pl-4">Nuestra Experiencia en Video</h3>
+
+      <!-- VIDEOS INFORMATIVOS -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <h4 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#78A942]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Videos Informativos
+          </h4>
+          <div class="hidden sm:flex items-center gap-2">
+            <button onclick="document.getElementById('carrusel-informativos').scrollBy({left:-260, behavior:'smooth'})" class="w-10 h-10 rounded-full border border-gray-200 hover:border-[#78A942] hover:text-[#78A942] flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </button>
+            <button onclick="document.getElementById('carrusel-informativos').scrollBy({left:260, behavior:'smooth'})" class="w-10 h-10 rounded-full border border-gray-200 hover:border-[#78A942] hover:text-[#78A942] flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="carrusel-informativos" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¡La energía solar está al alcance de todos! Realizando una visita técnica para la insta.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¡La energía solar está al alcance de todos!</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Cómo se hace el mantenimiento de un sistema solar¿Cada cuánto ¿Por qué es tan importanteDale pl.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¿Cómo se hace el mantenimiento de un sistema solar?</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Cual sistema solar es ideal para tiNo todos los sistemas solares funcionan igual y elegir.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¿Cuál sistema solar es ideal para ti?</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Estás usando bien tu aire acondicionado Hoy te comparto algunos tips clave que debes tener.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¿Estás usando bien tu aire acondicionado?</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Pensando en instalar tu sistema de energia solar ¿Pero no sabes por dónde empezar.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¿Pensando en instalar tu sistema solar?</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Quieres pagar menos impuestos  Si la respuesta es sí, esta información te interesa Hoy e.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¿Quieres pagar menos impuestos?</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/¿Ya conocías estos datos Son muchas las ventajas de optar por la energía solar.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Ventajas de optar por la energía solar</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/Aprovecha los excedentes de energía solar y ahorra en tu factura de luz Cuando tus paneles.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Aprovecha los excedentes de energía solar</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/Esto me lo preguntan muy seguido, y hoy te explico los pasos clave de forma sencilla mira e.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Los pasos clave, explicados de forma sencilla</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/inversores vs. Microinversores- ¿Cual es la mejor opción para tu sistema solar La eleccion.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Inversores vs. Microinversores</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/La instalación es solo una parte del proyecto solar, la legalización es lo que lo hace funcionar.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">La legalización, clave para que funcione tu sistema</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/Lo preguntan mucho La instalación de paneles solares en edificios de apartamentos puede.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Paneles solares en edificios de apartamentos</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/Los sistemas solares también se adaptan a negocios móviles o compactos como estos.Son ideales pa.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Ideales para negocios móviles o compactos</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/No todos los paneles solares trabajan igual Los paneles bifaciales captan energía por ambos.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Paneles bifaciales: energía por ambos lados</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/6.VIDEOS INFORMATIVOS/Olvídate de los apagones de luz y las altas sumas en tus recibos de energía eléctrica.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Olvídate de los apagones y las altas facturas</p></div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
-  </section>
+    </section>
 
-  <section id="servicios" class="bg-[#fafaf9] py-2">
+<section id="servicios" class="bg-[#fafaf9] py-2">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
@@ -150,12 +326,12 @@
             <span class="w-8 h-0.5 bg-[#78A942]"></span> Nuestros Servicios
           </span>
           <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 max-w-2xl leading-tight">
-            Instalación, mantenimiento y asesoría en todo Colombia
+            Instalación y asesoría en todo Colombia
           </h2>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <div class="bg-white rounded-3xl p-6 shadow-sm flex flex-col h-full border border-gray-100">
           <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-[#78A942] mb-6">
@@ -192,17 +368,6 @@
 
         <div class="bg-white rounded-3xl p-6 shadow-sm flex flex-col h-full border border-gray-100">
           <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-[#78A942] mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Mantenimiento</h3>
-          <p class="text-sm text-gray-500 mb-8 flex-grow">Servicios de inspección, limpieza y monitoreo preventivo para garantizar el óptimo funcionamiento de tu sistema.</p>
-          <div class="relative w-full h-36 rounded-xl overflow-hidden mt-auto">
-            <img src="/page/home/Mantenimiento.webp" alt="Mantenimiento de paneles solares" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 shadow-sm flex flex-col h-full border border-gray-100">
-          <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-[#78A942] mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Gobernanza</h3>
@@ -216,51 +381,55 @@
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-20">
-    <div class="bg-[#1b2026] text-white rounded-3xl py-2 px-6 sm:px-12 shadow-2xl bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] relative overflow-hidden">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-20">
+    <div class="bg-[#1b2026] text-white rounded-3xl py-10 px-6 sm:px-12 shadow-2xl bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-[#1b2026]/50 pointer-events-none"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 divide-y md:divide-y-0 md:divide-x divide-gray-700 relative z-10">
-        
-        <div class="flex items-center gap-6 md:pl-0 pt-6 md:pt-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 relative z-10">
+
+        <div class="flex items-center gap-5 lg:border-l lg:border-gray-700 lg:pl-6 lg:first:border-l-0 lg:first:pl-0">
+          <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+          </div>
           <div>
-            <p class="text-4xl font-extrabold">+250</p>
-            <p class="text-sm text-gray-400 mt-1">Proyectos<br>realizados</p>
+            <p class="text-4xl font-extrabold leading-none">+600</p>
+            <p class="text-sm text-gray-400 mt-2 leading-tight">Proyectos<br>realizados</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-6 lg:pl-10 pt-6 md:pt-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+        <div class="flex items-center gap-5 lg:border-l lg:border-gray-700 lg:pl-6">
+          <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
           <div>
-            <p class="text-4xl font-extrabold flex items-baseline gap-1 whitespace-nowrap">+15 <span class="text-xl font-bold text-[#78A942]">MW</span></p>
-            <p class="text-sm text-gray-400 mt-1">Capacidad<br>instalada</p>
+            <p class="text-4xl font-extrabold leading-none flex items-baseline gap-1 whitespace-nowrap">+6.8 <span class="text-xl font-bold text-[#78A942]">MW</span></p>
+            <p class="text-sm text-gray-400 mt-2 leading-tight">Capacidad<br>instalada</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-6 lg:pl-10 pt-6 md:pt-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        <div class="flex items-center gap-5 lg:border-l lg:border-gray-700 lg:pl-6">
+          <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+          </div>
           <div>
-            <p class="text-4xl font-extrabold">+120</p>
-            <p class="text-sm text-gray-400 mt-1">Clientes<br>satisfechos</p>
+            <p class="text-4xl font-extrabold leading-none">+500</p>
+            <p class="text-sm text-gray-400 mt-2 leading-tight">Clientes<br>satisfechos</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-6 lg:pl-10 pt-6 md:pt-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#78A942] transform scale-[1.8] origin-left -translate-y-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+        <div class="flex items-center gap-5 lg:border-l lg:border-gray-700 lg:pl-6">
+          <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#78A942]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
           <div>
-            <p class="text-4xl font-extrabold flex items-baseline gap-1 whitespace-nowrap">
-              +2,500 <span class="text-xl font-bold text-[#78A942]">TON</span>
-            </p>
-            <p class="text-sm text-gray-400 mt-1">CO₂ evitado<br>al año</p>
+            <p class="text-4xl font-extrabold leading-none whitespace-nowrap">+5.1M <span class="text-xl font-bold text-[#78A942]">TON</span></p>
+            <p class="text-sm text-gray-400 mt-2 leading-tight">CO₂ evitado<br>al año</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
-
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
       <div>
@@ -268,8 +437,11 @@
           <span class="w-8 h-0.5 bg-[#78A942]"></span> Proyectos
         </span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 max-w-sm leading-tight">
-          Conoce unos de nuestros casos de éxito
+          Proyectos más importantes
         </h2>
+        <p class="text-sm text-gray-600 mt-4 max-w-2xl leading-relaxed">
+          Ya contamos con 28 proyectos documentados con ficha técnica (paneles, inversor, potencia).
+        </p>
       </div>
       <a routerLink="/proyectos" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-colors flex-shrink-0 cursor-pointer">
         Ver todos los proyectos
@@ -307,6 +479,113 @@
       }
     </div>
   </section>
+ <section id="nosotros" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-20" style="margin-bottom: 25px">
+  
+
+    <div class="border-t border-gray-100 pt-12">
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <h4 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#78A942]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Casos de Éxito / Testimonios
+          </h4>
+          <div class="hidden sm:flex items-center gap-2">
+            <button onclick="document.getElementById('carrusel-testimonios').scrollBy({left:-260, behavior:'smooth'})" class="w-10 h-10 rounded-full border border-gray-200 hover:border-[#78A942] hover:text-[#78A942] flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </button>
+            <button onclick="document.getElementById('carrusel-testimonios').scrollBy({left:260, behavior:'smooth'})" class="w-10 h-10 rounded-full border border-gray-200 hover:border-[#78A942] hover:text-[#78A942] flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="carrusel-testimonios" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/8 meses sin pagar un solo peso de luz.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">¡8 meses sin pagar un solo peso de luz!</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/¿Creen posible no deberle a afinia, si no que incluso ellos te deban a ti Es el caso de Samir.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">El caso de Samir: de deberle a Afinia a que le deban a él</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/¿Sabías que ciclodeportesc le apostó a la energía solar y ahora son una empresa que ahorra.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Ciclodeportes le apostó a la energía solar</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/Como doña Ana, muchos ya dejaron de sufrir por los altos costos de energía. Hoy su factura es me.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Como doña Ana, muchos dejaron de sufrir altos costos</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/Hay decisiones que cambian la vida y ahorrar en la factura de energía es una de ellas. Este cli.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Decisiones que cambian la vida</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/Inversiones Torres Daza.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Experiencia de Inversiones Torres Daza con Tecsolar</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/La estética estetica_sixs dio un gran paso al instalar energía solar con Tecsolar y ahora vive.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Estética Sixs dio el paso hacia la energía solar</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/Pasaron de pagar facturas altas.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">De pagar facturas de $900.000 a $0 pesos</p></div>
+          </div>
+
+          <div class="snap-start flex-shrink-0 w-52 sm:w-56 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
+            <div class="relative w-full aspect-[9/16] bg-black">
+              <video controls playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/page/home/videos/5.VIDEOS DE TESTIMONIOS/WhatsApp Video 2026-07-03 at 12.25.43 PM.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-3"><p class="text-xs font-semibold text-gray-800 line-clamp-3">Testimonio de un cliente satisfecho</p></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </section>
 
   <section id="proceso" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-100 mt-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
@@ -384,7 +663,7 @@
       </div>
 
       <div class="hidden md:block w-1/3 h-full absolute right-0 top-0">
-        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover opacity-60 mix-blend-overlay" alt="Panel Solar CTA">
+        <img src="/page/home/INICIO%201.webp" class="w-full h-full object-cover opacity-60 mix-blend-overlay" alt="Panel Solar CTA">
         <div class="absolute inset-0 bg-gradient-to-r from-[#21272e] via-transparent to-transparent"></div>
       </div>
 

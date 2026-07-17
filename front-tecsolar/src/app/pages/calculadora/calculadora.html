@@ -12,7 +12,8 @@
       <p class="text-red-500 font-bold text-sm">{{ error }}</p>
     }
     
-    <button (click)="calcular()" class="w-full bg-[#1b2026] text-white p-4 rounded-xl font-bold hover:bg-gray-800 transition-colors">
+    <!-- Se agregó type="button" para evitar comportamientos por defecto -->
+    <button type="button" (click)="calcular()" class="w-full bg-[#1b2026] text-white p-4 rounded-xl font-bold hover:bg-gray-800 transition-colors cursor-pointer">
       Calcular sistema
     </button>
   </div>
@@ -35,9 +36,10 @@
         * Nota: Este resultado es un cálculo aproximado. La configuración definitiva requiere una validación profesional y técnica por parte de nuestro equipo para asegurar la eficiencia del sistema en su ubicación real.
       </p>
 
-      <button (click)="enviarWhatsApp()" class="w-full bg-[#78A942] text-white p-4 rounded-xl font-bold hover:bg-[#659135] transition-colors flex items-center justify-center gap-2">
+      <!-- Se agregó type="button", cursor-pointer y el color oficial de WhatsApp (#25D366) para mejorar la conversión -->
+      <button type="button" (click)="enviarWhatsApp()" class="w-full bg-[#25D366] text-white p-4 rounded-xl font-bold hover:bg-[#1fb855] transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.52 0 10.02-4.5 10.02-10.02s-4.5-10.02-10.02-10.02-10.02 4.5-10.02 10.02c0 1.95.539 3.738 1.58 5.397l-1.07 3.906 3.784-.992z"/></svg>
-        Cotizar este sistema
+        Cotizar este sistema en WhatsApp
       </button>
     </div>
   }

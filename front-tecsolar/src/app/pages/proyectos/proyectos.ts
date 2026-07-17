@@ -28,25 +28,38 @@ export class Proyectos implements OnInit {
     { id: 'proyecto-rincon-de-los-rosales', nombre: 'Rincón de los Rosales', tipo: 'Residencial', loc: 'Valledupar', pot: '9.92 kWp', img: '', cargando: true },
   ];
 
-  filtroActual: string = 'Todos'; // <--- Nueva variable para el filtro
+  filtroActual: string = 'Todos';
   modalAbierta = false;
   proyectoActivo: any = null;
   imagenesModal: string[] = [];
-  imagenExpandida: string | null = null; // <--- Nueva variable para el previsualizador
+  imagenExpandida: string | null = null;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
-  // Lógica para filtrar los proyectos
+  // Lógica de filtrado actualizada para agrupar categorías
   get proyectosFiltrados() {
     if (this.filtroActual === 'Todos') {
       return this.proyectos;
     }
+
     return this.proyectos.filter(p => {
       const tipo = p.tipo.toLowerCase();
-      const filtro = this.filtroActual.toLowerCase();
-      // Asociamos "Comercial" del botón con "Empresarial" en tus datos
-      if (filtro === 'comercial' && tipo === 'empresarial') return true;
-      return tipo === filtro;
+      
+      if (this.filtroActual === 'Residencial') {
+        return tipo === 'residencial';
+      }
+      
+      // Agrupa Comercial, Industrial, Agrícola y la etiqueta existente "Empresarial"
+      if (this.filtroActual === 'Comercial, Industrial y Agrícola') {
+        return ['empresarial', 'comercial', 'industrial', 'agrícola'].includes(tipo);
+      }
+      
+      // Agrupa Gobierno, Institucional y Gobernanza
+      if (this.filtroActual === 'Gobierno') {
+        return ['gobierno', 'institucional', 'gobernanza'].includes(tipo);
+      }
+
+      return false;
     });
   }
 
@@ -63,7 +76,7 @@ export class Proyectos implements OnInit {
             img: lista.length > 0 ? `/proyectos/${p.id}/${lista[0]}` : '',
             cargando: false
           };
-          this.cdr.detectChanges(); // fuerza actualización de la vista
+          this.cdr.detectChanges();
         },
         error: () => {
           this.proyectos[index] = { ...p, cargando: false };
@@ -94,10 +107,9 @@ export class Proyectos implements OnInit {
     this.modalAbierta = false;
     this.proyectoActivo = null;
     document.body.style.overflow = '';
-    this.cerrarImagen(); // Cerrar también la imagen expandida si estuviera abierta
+    this.cerrarImagen();
   }
 
-  // Funciones del previsualizador de imagen
   abrirImagen(img: string) {
     this.imagenExpandida = img;
   }

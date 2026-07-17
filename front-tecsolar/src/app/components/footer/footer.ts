@@ -12,9 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class Footer {
   // Lista de tus sucursales exactas y ordenadas correctamente
   ciudades = [
-    { nombre: 'Valledupar', direccion: 'Cra 12 N° 13b-02 – Barrio Obrero, Valledupar, Colombia' },
-  
-    { nombre: 'Cartagena', direccion: 'Calle 32c N° 10a-31, Sector Centro, Cartagena, Colombia' }
+    { nombre: 'Valledupar', direccion: 'Cra 12 N° 13b-02 – Barrio Obrero, Valledupar, Colombia' }
   ];
 
   ciudadSeleccionada = this.ciudades[0]; // Inicia en Valledupar por defecto
