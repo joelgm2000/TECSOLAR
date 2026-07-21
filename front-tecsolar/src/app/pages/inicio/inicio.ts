@@ -1,30 +1,38 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { LazyVideoDirective } from '../../directives/lazy-video.directive';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [RouterLink], // Importante para que funcione el routerLink de los botones
+  imports: [RouterLink, LazyVideoDirective],
   templateUrl: './inicio.html',
-  styleUrl: './inicio.css' // O la extensión que uses
+  styleUrl: './inicio.css'
 })
 export class Inicio implements OnInit {
+  cargandoPagina: boolean = true;
 
-  // 1. Agregas la variable proyectos
+  @ViewChild('carruselInformativos') carruselInformativos!: ElementRef<HTMLElement>;
+  @ViewChild('carruselTestimonios') carruselTestimonios!: ElementRef<HTMLElement>;
+
   proyectos: any[] = [
     { id: 'zuluaga-empresarial', nombre: 'Zuluaga', tipo: 'Empresarial', loc: 'Valledupar', pot: '72.60 kWp', img: '', cargando: true },
     { id: 'sirinesse-empresarial', nombre: 'Sirinesse', tipo: 'Empresarial', loc: 'Valledupar', pot: '39.93 kWp', img: '', cargando: true },
     { id: 'proyecto-buitrago', nombre: 'Buitrago', tipo: 'Empresarial', loc: 'Valledupar', pot: '18.15 kWp', img: '', cargando: true },
-    { id: 'set-cars-empresarial', nombre: 'Set Cars', tipo: 'Empresarial', loc: 'Valledupar', pot: '17.36 kWp', img: '', cargando: true },
-  
+    { id: 'set-cars-empresarial', nombre: 'Set Cars', tipo: 'Empresarial', loc: 'Valledupar', pot: '17.36 kWp', img: '', cargando: true }
   ];
 
-  // 2. Inyectas los servicios necesarios en el constructor
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
-  // 3. Ejecutas la lógica para buscar la imagen de portada de cada proyecto
   ngOnInit() {
+    // Pantalla de carga mínima de 1.5 segundos
+    setTimeout(() => {
+      this.cargandoPagina = false;
+      this.cdr.detectChanges();
+    }, 1500);
+
+    // Lógica de carga de imágenes
     this.proyectos.forEach((p, index) => {
       this.http.get<string[]>(`/proyectos/${p.id}/fotos.json`).subscribe({
         next: (lista) => {

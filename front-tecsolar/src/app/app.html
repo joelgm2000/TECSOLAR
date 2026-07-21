@@ -1,6 +1,13 @@
 <app-navbar></app-navbar>
 
-<main class="min-h-screen">
+@if (cargando) {
+  <div class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white">
+    <div class="w-16 h-16 border-4 border-[#78A942] border-t-transparent rounded-full animate-spin"></div>
+    <p class="mt-4 text-[#78A942] font-bold">Preparando tu experiencia TecSolar...</p>
+  </div>
+}
+
+<main [class.opacity-0]="cargando" class="min-h-screen transition-opacity duration-500">
   <router-outlet></router-outlet>
 </main>
 
