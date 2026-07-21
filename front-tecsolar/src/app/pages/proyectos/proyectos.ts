@@ -26,6 +26,20 @@ export class Proyectos implements OnInit {
     { id: 'proyecto-strauch', nombre: 'Strauch', tipo: 'Residencial', loc: 'Valledupar', pot: '7.50 kWp', img: '', cargando: true },
     { id: 'proyecto-urb-los-campanos', nombre: 'Urbz Los Campanos', tipo: 'Residencial', loc: 'Valledupar', pot: '11.07 kWp', img: '', cargando: true },
     { id: 'proyecto-rincon-de-los-rosales', nombre: 'Rincón de los Rosales', tipo: 'Residencial', loc: 'Valledupar', pot: '9.92 kWp', img: '', cargando: true },
+    { id: 'aida-lesmes', nombre: 'Aida Lesmes', tipo: 'Residencial', loc: 'Valledupar', pot: '7.50 kWp', img: '', cargando: true },
+    { id: 'set-cars-empresarial', nombre: 'Set Cars', tipo: 'Empresarial', loc: 'Valledupar', pot: '17.36 kWp', img: '', cargando: true },
+    { id: 'proyecto-ramon-acevedo', nombre: 'Ramon Acevedo', tipo: 'Residencial', loc: 'Valledupar', pot: '7.50 kWp', img: '', cargando: true },
+    { id: 'proyecto-buitrago', nombre: 'Buitrago', tipo: 'Empresarial', loc: 'Valledupar', pot: '18.15 kWp', img: '', cargando: true },
+    { id: 'proyecto-residencial-conjunto-granadillo', nombre: 'Conjunto Granadillo', tipo: 'Residencial', loc: 'Valledupar', pot: '14.76 kWp', img: '', cargando: true },
+    { id: 'proyecto-empresarial-skall', nombre: 'Skall', tipo: 'Empresarial', loc: 'Valledupar', pot: '11.07 kWp', img: '', cargando: true },
+    { id: 'proyecto-empresarial-sierra-autos', nombre: 'Sierra Autos', tipo: 'Empresarial', loc: 'Valledupar', pot: '7.38 kWp', img: '', cargando: true },
+    { id: 'proyecto-residencial-conjunto-ciudadela-rosario-real', nombre: 'Ciudadela Rosario Real', tipo: 'Residencial', loc: 'Valledupar', pot: '12.30 kWp', img: '', cargando: true },
+    { id: 'gomez-marsella-real', nombre: 'Gómez (Marsella Real)', tipo: 'Residencial', loc: 'Valledupar', pot: '7.26 kWp', img: '', cargando: true },
+    { id: 'bornacelli-san-carlos', nombre: 'Bornacelli (San Carlos)', tipo: 'Residencial', loc: 'Valledupar', pot: '9.68 kWp', img: '', cargando: true },
+    { id: 'osorio-quintas-del-country', nombre: 'Osorio (Quintas del Country)', tipo: 'Residencial', loc: 'Valledupar', pot: '9.68 kWp', img: '', cargando: true },
+    { id: 'carreno-santa-rosalia', nombre: 'Carreño (Santa Rosalia)', tipo: 'Residencial', loc: 'Valledupar', pot: '6.98 kWp', img: '', cargando: true },
+    { id: 'sirinesse-empresarial', nombre: 'Sirinesse', tipo: 'Empresarial', loc: 'Valledupar', pot: '39.93 kWp', img: '', cargando: true },
+    { id: 'zuluaga-empresarial', nombre: 'Zuluaga', tipo: 'Empresarial', loc: 'Valledupar', pot: '72.60 kWp', img: '', cargando: true }
   ];
 
   filtroActual: string = 'Todos';
@@ -36,7 +50,6 @@ export class Proyectos implements OnInit {
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
-  // Lógica de filtrado actualizada para agrupar categorías
   get proyectosFiltrados() {
     if (this.filtroActual === 'Todos') {
       return this.proyectos;
@@ -49,12 +62,10 @@ export class Proyectos implements OnInit {
         return tipo === 'residencial';
       }
       
-      // Agrupa Comercial, Industrial, Agrícola y la etiqueta existente "Empresarial"
       if (this.filtroActual === 'Comercial, Industrial y Agrícola') {
         return ['empresarial', 'comercial', 'industrial', 'agrícola'].includes(tipo);
       }
       
-      // Agrupa Gobierno, Institucional y Gobernanza
       if (this.filtroActual === 'Gobierno') {
         return ['gobierno', 'institucional', 'gobernanza'].includes(tipo);
       }

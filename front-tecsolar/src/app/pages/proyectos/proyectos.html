@@ -54,7 +54,7 @@
     </div>
   </section>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-10">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-10">
     <div class="flex overflow-x-auto pb-4 lg:pb-0 lg:flex-wrap gap-3 lg:gap-4 no-scrollbar">
       
       <!-- Botón: Todos -->
@@ -98,21 +98,27 @@
   @for (p of proyectosFiltrados; track p.id) { 
     <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
       <div class="relative w-full h-56 overflow-hidden bg-gray-100">
-  @if (p.cargando) {
-    <div class="w-full h-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
-  } @else if (p.img) {
-    <img [src]="p.img" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" [alt]="p.nombre">
-  } @else {
-    <div class="w-full h-full flex items-center justify-center text-gray-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    </div>
-  }
-  <div class="absolute top-4 right-4 bg-[#78A942]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
-    {{ p.tipo }}
-  </div>
-</div>
+        @if (p.cargando) {
+          <div class="w-full h-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
+        } @else if (p.img) {
+          <!-- Validación para la miniatura: si es video -->
+          @if (p.img.includes('.mp4') || p.img.includes('.webm')) {
+            <video [src]="p.img" muted autoplay loop playsinline class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"></video>
+          } @else {
+            <!-- Si es imagen -->
+            <img [src]="p.img" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" [alt]="p.nombre">
+          }
+        } @else {
+          <div class="w-full h-full flex items-center justify-center text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        }
+        <div class="absolute top-4 right-4 bg-[#78A942]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">
+          {{ p.tipo }}
+        </div>
+      </div>
       
       <div class="p-6 sm:p-8 flex-grow flex flex-col">
         <h3 class="font-extrabold text-xl text-gray-900 mb-3">{{ p.nombre }}</h3>
@@ -234,13 +240,19 @@
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
             </svg>
-            Cargando imágenes...
+            Cargando galería...
           </div>
         }
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          @for (img of imagenesModal; track img) {
-            <div class="rounded-2xl overflow-hidden shadow-md aspect-video cursor-pointer" (click)="abrirImagen(img)">
-              <img [src]="img" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+          @for (media of imagenesModal; track media) {
+            <div class="rounded-2xl overflow-hidden shadow-md aspect-video cursor-pointer bg-black" (click)="abrirImagen(media)">
+              <!-- Validación en el grid del modal: si es video -->
+              @if (media.includes('.mp4') || media.includes('.webm')) {
+                <video [src]="media" class="w-full h-full object-cover object-top hover:opacity-80 transition-opacity duration-300 pointer-events-none"></video>
+              } @else {
+                <!-- Si es imagen -->
+                <img [src]="media" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+              }
             </div>
           }
         </div>
@@ -260,7 +272,13 @@
       </svg>
     </button>
     
-    <img [src]="imagenExpandida" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" (click)="$event.stopPropagation()">
+    <!-- Validación en el expansor: si es video -->
+    @if (imagenExpandida.includes('.mp4') || imagenExpandida.includes('.webm')) {
+      <video [src]="imagenExpandida" controls autoplay class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" (click)="$event.stopPropagation()"></video>
+    } @else {
+      <!-- Si es imagen -->
+      <img [src]="imagenExpandida" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl" (click)="$event.stopPropagation()">
+    }
   </div>
 }
 
