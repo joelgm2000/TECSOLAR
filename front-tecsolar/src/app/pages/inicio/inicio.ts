@@ -19,8 +19,9 @@ export class Inicio implements OnInit {
   proyectos: any[] = [
     { id: 'zuluaga-empresarial', nombre: 'Zuluaga', tipo: 'Empresarial', loc: 'Valledupar', pot: '72.60 kWp', img: '', cargando: true },
     { id: 'sirinesse-empresarial', nombre: 'Sirinesse', tipo: 'Empresarial', loc: 'Valledupar', pot: '39.93 kWp', img: '', cargando: true },
-    { id: 'proyecto-buitrago', nombre: 'Buitrago', tipo: 'Empresarial', loc: 'Valledupar', pot: '18.15 kWp', img: '', cargando: true },
-    { id: 'set-cars-empresarial', nombre: 'Set Cars', tipo: 'Empresarial', loc: 'Valledupar', pot: '17.36 kWp', img: '', cargando: true }
+    { id: 'proyecto-pollo-arabe', nombre: 'Pollo Árabe', tipo: 'Empresarial', loc: 'Valledupar', pot: '2.700 kWp', img: '', cargando: true },
+    { id: 'alumbrado-publico', nombre: 'Alumbrado Publico', tipo: 'alumbrado-publico', loc: 'Valledupar', pot: '', img: '', cargando: true },
+ 
   ];
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
